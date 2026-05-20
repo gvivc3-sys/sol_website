@@ -104,6 +104,7 @@
       font-weight: 400;
       letter-spacing: 0.02em;
       color: #7a6e5e;
+      text-align: center;
       transition: color 0.2s;
     }
     .link-btn:hover .link-btn-sub { color: #a89070; }
@@ -160,15 +161,17 @@
       aspect-ratio: 1/1;
       background: #0c0b08;
       border: 1px solid #252018;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.2s;
     }
-    .best-seller-item:hover { border-color: #c9943a; transform: scale(1.02); }
+    .best-seller-item:hover { border-color: #c9943a; }
     .best-seller-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.35s ease;
     }
+    .best-seller-item:hover img { transform: scale(1.08); }
 
     /* Newsletter */
     .signup-box {
