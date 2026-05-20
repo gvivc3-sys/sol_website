@@ -10,7 +10,7 @@ export default async function handler(req) {
     return new Response(JSON.stringify({ error: 'Email required' }), { status: 400 });
   }
 
-  const kitRes = await fetch('https://app.kit.com/forms/ca7e16478e/subscriptions', {
+  const kitRes = await fetch('https://app.kit.com/forms/9463746/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({ email_address: email })
