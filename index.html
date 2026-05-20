@@ -108,6 +108,67 @@
     }
     .link-btn:hover .link-btn-sub { color: #a89070; }
 
+    /* Sol Dept expanded card */
+    .shop-card {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #252018;
+      background: #141209;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .shop-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 20px;
+      color: #e0d4bc;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, color 0.2s;
+      border-bottom: 1px solid #1e1a12;
+    }
+    .shop-header:hover { background: #1c1810; color: #f5e9d0; }
+    .shop-header:hover .link-btn-sub { color: #a89070; }
+    .shop-header svg { width: 17px; height: 17px; flex-shrink: 0; fill: #c9943a; align-self: center; display: block; }
+    .best-sellers {
+      padding: 14px 14px 16px;
+    }
+    .best-sellers-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #4a4238;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .best-sellers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .best-seller-item {
+      display: block;
+      border-radius: 7px;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: #0c0b08;
+      border: 1px solid #252018;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .best-seller-item:hover { border-color: #c9943a; transform: scale(1.02); }
+    .best-seller-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     /* Newsletter */
     .signup-box {
       width: 100%;
@@ -304,13 +365,29 @@
     </div>
 
     <!-- Sol Dept Shop -->
-    <a class="link-btn" href="https://soldept.com/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.42 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-      <div class="link-btn-inner">
-        <span>Sol Dept — Shop</span>
-        <span class="link-btn-sub">Cotton gym wear &middot; Natural supplements &middot; Organic soaps &amp; more</span>
+    <div class="shop-card">
+      <a class="shop-header" href="https://soldept.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.42 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <div class="link-btn-inner">
+          <span>Sol Dept — Shop</span>
+          <span class="link-btn-sub">Cotton gym wear &middot; Natural supplements &middot; Organic soaps &amp; more</span>
+        </div>
+      </a>
+      <div class="best-sellers">
+        <div class="best-sellers-label">Best Sellers</div>
+        <div class="best-sellers-grid">
+          <a class="best-seller-item" href="#" target="_blank" rel="noopener">
+            <img src="/media/bw_prod_b.jpg" alt="Sol Dept product" />
+          </a>
+          <a class="best-seller-item" href="#" target="_blank" rel="noopener">
+            <img src="/media/c_salts_updated.jpg" alt="Sol Dept product" />
+          </a>
+          <a class="best-seller-item" href="#" target="_blank" rel="noopener">
+            <img src="/media/new_natural_mag_b.jpg" alt="Sol Dept product" />
+          </a>
+        </div>
       </div>
-    </a>
+    </div>
 
     <a class="link-btn" href="https://www.amazon.ca/Sol-Way-Brah/dp/B0CV5MDGPC" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
