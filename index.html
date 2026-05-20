@@ -454,12 +454,12 @@ async function kitSubscribe() {
   msg.className = 'signup-msg';
 
   try {
-    const res = await fetch('https://app.kit.com/forms/ca7e16478e/subscriptions', {
+    const res = await fetch('/api/subscribe', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ email_address: email })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
     });
-    if (res.ok || res.status === 200) {
+    if (res.ok) {
       msg.textContent = "You're in. Check your inbox to confirm.";
       msg.className = 'signup-msg success';
       input.value = '';
