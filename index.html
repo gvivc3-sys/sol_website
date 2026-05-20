@@ -89,7 +89,7 @@
     }
     .link-btn svg { width: 17px; height: 17px; flex-shrink: 0; fill: #c9943a; }
 
-    /* Newsletter signup form */
+    /* Newsletter */
     .signup-box {
       width: 100%;
       padding: 18px 20px;
@@ -100,17 +100,23 @@
     .signup-label {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       font-size: 0.88rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       color: #e0d4bc;
       margin-bottom: 12px;
+      text-align: center;
     }
     .signup-label svg { width: 17px; height: 17px; fill: #c9943a; flex-shrink: 0; }
     .signup-row {
       display: flex;
       gap: 8px;
+    }
+    @media (max-width: 400px) {
+      .signup-row { flex-direction: column; }
+      .signup-btn { width: 100%; }
     }
     .signup-input {
       flex: 1;
@@ -143,10 +149,75 @@
     .signup-msg {
       margin-top: 10px;
       font-size: 0.8rem;
+      text-align: center;
       display: none;
     }
     .signup-msg.success { color: #7dba84; display: block; }
     .signup-msg.error   { color: #c97070; display: block; }
+
+    /* Latest video */
+    .video-box {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #252018;
+      background: #141209;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s;
+    }
+    .video-box:hover { border-color: #c9943a; }
+    .video-thumb-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0c0b08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .video-play {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      background: rgba(201,148,58,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .video-box:hover .video-play { background: #c9943a; }
+    .video-play svg { width: 22px; height: 22px; fill: #0c0b08; margin-left: 3px; }
+    .video-meta {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .video-meta svg { width: 15px; height: 15px; fill: #c9943a; flex-shrink: 0; }
+    .video-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #c8bba6;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .video-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4a4238;
+      padding: 0 16px 10px;
+    }
 
     .footer {
       margin-top: 48px;
@@ -181,7 +252,7 @@
 
   <div class="links">
 
-    <!-- Inline newsletter signup -->
+    <!-- Newsletter signup -->
     <div class="signup-box">
       <div class="signup-label">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -193,6 +264,21 @@
       </div>
       <div class="signup-msg" id="kit-msg"></div>
     </div>
+
+    <!-- Latest YouTube video (populated by JS) -->
+    <a class="video-box" id="video-box" href="https://www.youtube.com/@realsolbrah" target="_blank" rel="noopener" style="display:none">
+      <div class="video-thumb-wrap">
+        <img class="video-thumb" id="video-thumb" src="" alt="" />
+        <div class="video-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="video-label">Latest Video</div>
+      <div class="video-meta">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <div class="video-title" id="video-title"></div>
+      </div>
+    </a>
 
     <a class="link-btn" href="https://soldept.com/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.42 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
@@ -245,7 +331,7 @@ async function kitSubscribe() {
     });
 
     if (res.ok || res.status === 200) {
-      msg.textContent = 'You\'re in. Check your inbox to confirm.';
+      msg.textContent = "You're in. Check your inbox to confirm.";
       msg.className = 'signup-msg success';
       input.value = '';
       btn.textContent = 'Done';
@@ -263,6 +349,27 @@ async function kitSubscribe() {
 document.getElementById('kit-email').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') kitSubscribe();
 });
+
+// Load latest YouTube video
+(async function loadVideo() {
+  try {
+    const res  = await fetch('/api/latest-video');
+    const data = await res.json();
+    if (!data.videoId) return;
+
+    const box   = document.getElementById('video-box');
+    const thumb = document.getElementById('video-thumb');
+    const title = document.getElementById('video-title');
+
+    box.href    = `https://www.youtube.com/watch?v=${data.videoId}`;
+    thumb.src   = `https://i.ytimg.com/vi/${data.videoId}/hqdefault.jpg`;
+    thumb.alt   = data.title;
+    title.textContent = data.title;
+    box.style.display = 'block';
+  } catch {
+    // silently skip if API fails
+  }
+})();
 </script>
 </body>
 </html>
