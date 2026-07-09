@@ -34,12 +34,16 @@
       flex-direction: column;
       align-items: center;
     }
-    .thumb {
+    .panel {
       width: 100%;
       border-radius: 10px;
       border: 1px solid #252018;
+      background-color: #141209;
+      overflow: hidden;
+    }
+    .thumb {
+      width: 100%;
       display: block;
-      margin-bottom: 24px;
     }
 
     /* MailerLite embed — re-themed to match the index page.
@@ -55,9 +59,9 @@
     }
     #mlb2-43545874#mlb2-43545874 .ml-form-embedBody,
     #mlb2-43545874#mlb2-43545874 .ml-form-successBody {
-      background-color: #141209 !important;
-      border: 1px solid #252018 !important;
-      border-radius: 10px !important;
+      background-color: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
       padding: 18px 20px !important;
     }
     #mlb2-43545874#mlb2-43545874 .ml-form-embedContent,
@@ -160,9 +164,10 @@
 <body>
 <div class="card">
 
-  <img class="thumb" src="/media/course_thumbnail_b.jpg" alt="Sol Brah Course" />
-
-  <div class="ml-embedded" data-form="O05F9n"></div>
+  <div class="panel">
+    <img class="thumb" src="/media/course_thumbnail_b.jpg" alt="Sol Brah Course" />
+    <div class="ml-embedded" data-form="O05F9n"></div>
+  </div>
 
   <div class="footer">solbrah.com</div>
 
