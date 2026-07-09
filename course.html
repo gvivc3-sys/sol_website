@@ -42,41 +42,31 @@
       margin-bottom: 24px;
     }
 
-    /* MailerLite embed — re-themed to match site (same card treatment as solbrah.life) */
-    .ml-embed-wrap {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #252018;
-      background-color: #141209;
-      padding: 18px 20px;
-    }
-    .ml-embed-wrap .ml-form-embedContainer {
+    /* MailerLite embed — re-themed to match the index page.
+       Selectors are doubled on the form's own #mlb2-43545874 id to out-specificity
+       MailerLite's injected #mlb2-43545874.ml-form-embedContainer ...!important rules. */
+    #mlb2-43545874#mlb2-43545874.ml-form-embedContainer {
       width: 100% !important;
     }
-    .ml-embed-wrap .ml-form-embedWrapper.embedForm {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedWrapper.embedForm {
       width: 100% !important;
       max-width: 100% !important;
       background: transparent !important;
     }
-    .ml-embed-wrap .ml-form-embedBody,
-    .ml-embed-wrap .ml-form-successBody {
-      background-color: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 0 !important;
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedBody,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successBody {
+      background-color: #141209 !important;
+      border: 1px solid #252018 !important;
+      border-radius: 10px !important;
+      padding: 18px 20px !important;
     }
-    .ml-embed-wrap .ml-form-successContent {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedContent,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent {
       text-align: center !important;
       margin: 0 0 14px 0 !important;
     }
-    /* MailerLite's own dynamic heading/subheading are hidden; card-heading below replaces them */
-    .ml-embed-wrap .ml-form-embedContent { display: none !important; }
-    .card-heading {
-      text-align: center;
-      margin: 0 0 14px 0;
-    }
-    .card-heading h4,
-    .ml-embed-wrap .ml-form-successContent h4 {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedContent h4,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent h4 {
       color: #e0d4bc !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
       font-size: 0.88rem !important;
@@ -85,8 +75,8 @@
       text-align: center !important;
       margin: 0 0 4px 0 !important;
     }
-    .card-heading p,
-    .ml-embed-wrap .ml-form-successContent p {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedContent p,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent p {
       color: #6b6050 !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
       font-size: 0.75rem !important;
@@ -95,26 +85,26 @@
       text-align: center !important;
       margin: 0 !important;
     }
-    .ml-embed-wrap .ml-form-successContent h4 { color: #7dba84 !important; font-style: normal !important; }
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent h4 { color: #7dba84 !important; font-style: normal !important; }
 
-    .ml-embed-wrap form.ml-block-form {
+    #mlb2-43545874#mlb2-43545874 form.ml-block-form {
       display: flex !important;
       gap: 8px !important;
       align-items: flex-start !important;
       margin: 0 !important;
       width: 100% !important;
     }
-    .ml-embed-wrap .ml-form-formContent {
+    #mlb2-43545874#mlb2-43545874 .ml-form-formContent {
       flex: 1 !important;
       margin: 0 !important;
       width: auto !important;
     }
-    .ml-embed-wrap .ml-form-fieldRow {
+    #mlb2-43545874#mlb2-43545874 .ml-form-fieldRow {
       margin: 0 !important;
       width: 100% !important;
     }
-    .ml-embed-wrap .ml-form-fieldRow input,
-    .ml-embed-wrap input.form-control {
+    #mlb2-43545874#mlb2-43545874 .ml-form-fieldRow input,
+    #mlb2-43545874#mlb2-43545874 input.form-control {
       background-color: #0c0b08 !important;
       border-color: #2e2820 !important;
       border-radius: 7px !important;
@@ -126,17 +116,17 @@
       line-height: normal !important;
       padding: 10px 14px !important;
     }
-    .ml-embed-wrap input.form-control::placeholder { color: #4a4238 !important; }
-    .ml-embed-wrap input.form-control:focus { border-color: #c9943a !important; outline: none !important; }
+    #mlb2-43545874#mlb2-43545874 input.form-control::placeholder { color: #4a4238 !important; }
+    #mlb2-43545874#mlb2-43545874 input.form-control:focus { border-color: #c9943a !important; outline: none !important; }
 
-    .ml-embed-wrap .ml-form-embedSubmit {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit {
       float: none !important;
       margin: 0 !important;
       width: auto !important;
       flex-shrink: 0 !important;
     }
-    .ml-embed-wrap .ml-form-embedSubmit button.primary,
-    .ml-embed-wrap button.primary {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit button.primary,
+    #mlb2-43545874#mlb2-43545874 button.primary {
       background-color: #c9943a !important;
       border: none !important;
       border-radius: 7px !important;
@@ -151,11 +141,11 @@
       white-space: nowrap !important;
       transition: background 0.2s !important;
     }
-    .ml-embed-wrap button.primary:hover { background-color: #d9a44a !important; }
+    #mlb2-43545874#mlb2-43545874 button.primary:hover { background-color: #d9a44a !important; }
     @media (max-width: 400px) {
-      .ml-embed-wrap form.ml-block-form { flex-direction: column !important; }
-      .ml-embed-wrap .ml-form-embedSubmit,
-      .ml-embed-wrap .ml-form-embedSubmit button.primary { width: 100% !important; }
+      #mlb2-43545874#mlb2-43545874 form.ml-block-form { flex-direction: column !important; }
+      #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit,
+      #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit button.primary { width: 100% !important; }
     }
 
     .footer {
@@ -172,16 +162,27 @@
 
   <img class="thumb" src="/media/course_thumbnail.jpg" alt="Sol Brah Course" />
 
-  <div class="ml-embed-wrap">
-    <div class="card-heading">
-      <h4>Join Waiting List</h4>
-      <p>Retention Mastery — Reclaim Your Masculine Power</p>
-    </div>
-    <div class="ml-embedded" data-form="O05F9n"></div>
-  </div>
+  <div class="ml-embedded" data-form="O05F9n"></div>
 
   <div class="footer">solbrah.com</div>
 
 </div>
+
+<script>
+(function() {
+  var container = document.querySelector('.ml-embedded[data-form="O05F9n"]');
+  if (!container) return;
+  var observer = new MutationObserver(function() {
+    var h4 = container.querySelector('.ml-form-embedContent h4');
+    var p  = container.querySelector('.ml-form-embedContent p');
+    if (h4 && p) {
+      h4.textContent = 'Join Waiting List';
+      p.textContent = 'Retention Mastery — Reclaim Your Masculine Power';
+      observer.disconnect();
+    }
+  });
+  observer.observe(container, { childList: true, subtree: true });
+})();
+</script>
 </body>
 </html>
