@@ -42,7 +42,14 @@
       margin-bottom: 24px;
     }
 
-    /* MailerLite embed — re-themed to match site */
+    /* MailerLite embed — re-themed to match site (same card treatment as solbrah.life) */
+    .ml-embed-wrap {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #252018;
+      background-color: #141209;
+      padding: 18px 20px;
+    }
     .ml-embed-wrap .ml-form-embedContainer {
       width: 100% !important;
     }
@@ -53,17 +60,22 @@
     }
     .ml-embed-wrap .ml-form-embedBody,
     .ml-embed-wrap .ml-form-successBody {
-      background-color: #141209 !important;
-      border: 1px solid #252018 !important;
-      border-radius: 10px !important;
-      padding: 18px 20px !important;
+      background-color: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
     }
-    .ml-embed-wrap .ml-form-embedContent,
     .ml-embed-wrap .ml-form-successContent {
       text-align: center !important;
       margin: 0 0 14px 0 !important;
     }
-    .ml-embed-wrap .ml-form-embedContent h4,
+    /* MailerLite's own dynamic heading/subheading are hidden; card-heading below replaces them */
+    .ml-embed-wrap .ml-form-embedContent { display: none !important; }
+    .card-heading {
+      text-align: center;
+      margin: 0 0 14px 0;
+    }
+    .card-heading h4,
     .ml-embed-wrap .ml-form-successContent h4 {
       color: #e0d4bc !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
@@ -73,7 +85,7 @@
       text-align: center !important;
       margin: 0 0 4px 0 !important;
     }
-    .ml-embed-wrap .ml-form-embedContent p,
+    .card-heading p,
     .ml-embed-wrap .ml-form-successContent p {
       color: #6b6050 !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
@@ -161,6 +173,10 @@
   <img class="thumb" src="/media/course_thumbnail.jpg" alt="Sol Brah Course" />
 
   <div class="ml-embed-wrap">
+    <div class="card-heading">
+      <h4>Join Waiting List</h4>
+      <p>Retention Mastery — Reclaim Your Masculine Power</p>
+    </div>
     <div class="ml-embedded" data-form="O05F9n"></div>
   </div>
 
