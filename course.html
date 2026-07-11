@@ -287,20 +287,31 @@
 </div>
 
 <script>
-(function() {
-  var container = document.querySelector('.ml-embedded[data-form="O05F9n"]');
+function mlOverrideCopy(formId, opts) {
+  var container = document.querySelector('.ml-embedded[data-form="' + formId + '"]');
   if (!container) return;
   var observer = new MutationObserver(function() {
-    var h4 = container.querySelector('.ml-form-embedContent h4');
-    var p  = container.querySelector('.ml-form-embedContent p');
-    if (h4 && p) {
-      h4.textContent = 'Join Waiting List';
-      p.textContent = 'Retention Mastery — Reclaim Your Masculine Power';
+    var h4  = container.querySelector('.ml-form-embedContent h4');
+    var p   = container.querySelector('.ml-form-embedContent p');
+    var btn = container.querySelector('.ml-form-embedSubmit button.primary');
+    if (h4 && btn) {
+      if (opts.heading) h4.textContent = opts.heading;
+      if (opts.sub && p) p.textContent = opts.sub;
+      if (opts.button) btn.textContent = opts.button;
       observer.disconnect();
     }
   });
   observer.observe(container, { childList: true, subtree: true });
-})();
+}
+mlOverrideCopy('O05F9n', {
+  heading: 'Join Waiting List',
+  sub: 'Retention Mastery — Reclaim Your Masculine Power',
+  button: 'Join'
+});
+mlOverrideCopy('xQxqUL', {
+  heading: 'Join Waiting List',
+  button: 'Join'
+});
 </script>
 </body>
 </html>
