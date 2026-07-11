@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sol Brah — Courses</title>
+  <meta name="description" content="Sol Brah Primal Courses — for a better, more vital life." />
+  <meta property="og:title" content="Sol Brah — Courses" />
+  <meta property="og:description" content="Sol Brah Primal Courses — for a better, more vital life." />
+  <meta property="og:image" content="https://solbrah.xyz/media/og_image.jpg" />
+  <meta property="og:type" content="website" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #0c0b08;
+      display: flex;
+      justify-content: center;
+      padding: 48px 16px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 900px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #7a6e5e;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #c9943a; }
+    .heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f0e6cc;
+      letter-spacing: 0.04em;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .course-card {
+      display: block;
+      border-radius: 10px;
+      border: 1px solid #252018;
+      background-color: #141209;
+      overflow: hidden;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .course-card:hover { border-color: #c9943a; }
+    .course-card img {
+      width: 100%;
+      aspect-ratio: 5/3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .course-card:hover img { transform: scale(1.04); }
+    .course-card-title {
+      padding: 12px 14px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #e0d4bc;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 440px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="/index.html">&larr; Back to Sol Brah</a>
+
+  <div class="heading">Courses</div>
+
+  <div class="grid">
+    <a class="course-card" href="/primal-courses.html">
+      <img src="/media/course_thumbnail_b.jpg" alt="Retention Mastery — Reclaim Your Masculine Power" />
+      <div class="course-card-title">Retention Mastery</div>
+    </a>
+    <a class="course-card" href="/mental-magic.html">
+      <img src="/media/metal_magic_thumb.png" alt="Mental Magic — Unchain Your Mind" />
+      <div class="course-card-title">Mental Magic</div>
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
