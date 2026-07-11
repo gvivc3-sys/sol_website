@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/course.html", "destination": "/index.html", "permanent": true }
+  ]
+}
