@@ -9,6 +9,7 @@
   <meta property="og:description" content="Retention Mastery — Reclaim Your Masculine Power." />
   <meta property="og:image" content="https://solbrah.xyz/media/course_thumbnail_b.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/style.css" />
   <!-- MailerLite Universal -->
   <script>
       (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -19,52 +20,10 @@
   </script>
   <!-- End MailerLite Universal -->
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      background: #0c0b08;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 48px 16px 64px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .card {
-      width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .back-link {
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #7a6e5e;
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      margin-bottom: 20px;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: #c9943a; }
-    .panel {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #252018;
-      background-color: #141209;
-      overflow: hidden;
-    }
-    .thumb {
-      width: 100%;
-      display: block;
-    }
-
-    /* MailerLite embed — re-themed to match the index page.
-       Selectors are doubled on the form's own #mlb2-43545874 id to out-specificity
-       MailerLite's injected #mlb2-43545874.ml-form-embedContainer ...!important rules. */
+    /* MailerLite embed override — selectors are doubled on the form's own
+       #mlb2-43545874 id to out-specificity MailerLite's injected
+       #mlb2-43545874.ml-form-embedContainer ...!important rules. This can't
+       live in style.css since the id is unique to this form. */
     #mlb2-43545874#mlb2-43545874.ml-form-embedContainer {
       width: 100% !important;
     }
@@ -87,8 +46,8 @@
     }
     #mlb2-43545874#mlb2-43545874 .ml-form-embedContent h4,
     #mlb2-43545874#mlb2-43545874 .ml-form-successContent h4 {
-      color: #e0d4bc !important;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      color: var(--text) !important;
+      font-family: var(--font) !important;
       font-size: 0.88rem !important;
       font-weight: 600 !important;
       letter-spacing: 0.04em !important;
@@ -97,16 +56,15 @@
     }
     #mlb2-43545874#mlb2-43545874 .ml-form-embedContent p,
     #mlb2-43545874#mlb2-43545874 .ml-form-successContent p {
-      color: #6b6050 !important;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      color: var(--text-dim) !important;
+      font-family: var(--font) !important;
       font-size: 0.75rem !important;
       font-style: italic !important;
       line-height: 1.4 !important;
       text-align: center !important;
       margin: 0 !important;
     }
-    #mlb2-43545874#mlb2-43545874 .ml-form-successContent h4 { color: #7dba84 !important; font-style: normal !important; }
-
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent h4 { color: var(--success) !important; font-style: normal !important; }
     #mlb2-43545874#mlb2-43545874 form.ml-block-form {
       display: flex !important;
       gap: 8px !important;
@@ -125,20 +83,19 @@
     }
     #mlb2-43545874#mlb2-43545874 .ml-form-fieldRow input,
     #mlb2-43545874#mlb2-43545874 input.form-control {
-      background-color: #0c0b08 !important;
-      border-color: #2e2820 !important;
-      border-radius: 7px !important;
+      background-color: var(--bg) !important;
+      border-color: var(--border-soft) !important;
+      border-radius: var(--radius-sm) !important;
       border-style: solid !important;
       border-width: 1px !important;
-      color: #e0d4bc !important;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      color: var(--text) !important;
+      font-family: var(--font) !important;
       font-size: 0.85rem !important;
       line-height: normal !important;
       padding: 10px 14px !important;
     }
-    #mlb2-43545874#mlb2-43545874 input.form-control::placeholder { color: #4a4238 !important; }
-    #mlb2-43545874#mlb2-43545874 input.form-control:focus { border-color: #c9943a !important; outline: none !important; }
-
+    #mlb2-43545874#mlb2-43545874 input.form-control::placeholder { color: var(--text-faint) !important; }
+    #mlb2-43545874#mlb2-43545874 input.form-control:focus { border-color: var(--accent) !important; outline: none !important; }
     #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit {
       float: none !important;
       margin: 0 !important;
@@ -147,11 +104,11 @@
     }
     #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit button.primary,
     #mlb2-43545874#mlb2-43545874 button.primary {
-      background-color: #c9943a !important;
+      background-color: var(--accent) !important;
       border: none !important;
-      border-radius: 7px !important;
-      color: #0c0b08 !important;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      border-radius: var(--radius-sm) !important;
+      color: var(--accent-text) !important;
+      font-family: var(--font) !important;
       font-size: 0.82rem !important;
       font-weight: 700 !important;
       letter-spacing: 0.05em !important;
@@ -161,28 +118,20 @@
       white-space: nowrap !important;
       transition: background 0.2s !important;
     }
-    #mlb2-43545874#mlb2-43545874 button.primary:hover { background-color: #d9a44a !important; }
+    #mlb2-43545874#mlb2-43545874 button.primary:hover { background-color: var(--accent-hover) !important; }
     @media (max-width: 400px) {
       #mlb2-43545874#mlb2-43545874 form.ml-block-form { flex-direction: column !important; }
       #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit,
       #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit button.primary { width: 100% !important; }
     }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 0.68rem;
-      color: #2e2820;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
   </style>
 </head>
 <body>
-<div class="card">
+<div class="page-stack">
 
   <a class="back-link" href="/courses.html">&larr; All Courses</a>
 
-  <div class="panel">
+  <div class="card panel">
     <img class="thumb" src="/media/course_thumbnail_b.jpg" alt="Retention Mastery — Reclaim Your Masculine Power" />
     <div class="ml-embedded" data-form="O05F9n"></div>
   </div>
