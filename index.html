@@ -263,5 +263,15 @@
   }
 })();
 </script>
+<script>
+  document.querySelectorAll('a[href*="soldept.com"]').forEach(function (a) {
+    var u = new URL(a.href);
+    u.searchParams.set('utm_source', location.hostname.replace('www.', ''));
+    u.searchParams.set('utm_medium', 'referral');
+    u.searchParams.set('utm_campaign', 'sol-hub');
+    u.searchParams.set('utm_content', u.pathname.split('/').pop() || 'shop');
+    a.href = u.toString();
+  });
+</script>
 </body>
 </html>
