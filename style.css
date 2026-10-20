@@ -260,14 +260,41 @@ body {
   border: 1px solid var(--border);
   background: var(--bg);
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  text-decoration: none;
+  transition: border-color 0.2s;
 }
+.best-seller-item:hover { border-color: var(--accent); }
+.best-seller-img { position: relative; aspect-ratio: 1 / 1; }
 .best-seller-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+.sale-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.best-seller-name {
+  padding: 11px 14px 12px;
+  font-size: 0.88rem;
+  font-weight: var(--weight-heading);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-align: center;
+  transition: color 0.2s;
+}
+.best-seller-item:hover .best-seller-name { color: var(--text-bright); }
 
 /* --- Latest video (index) -------------------------------------------------- */
 
