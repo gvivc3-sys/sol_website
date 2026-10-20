@@ -209,6 +209,17 @@ body {
 }
 .newsletter-sub { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.02em; }
 
+/* Retention Mastery launch card (index) — reuses .newsletter-card layout */
+.launch-card { margin-top: 28px; border-color: var(--accent); }
+.launch-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
 /* --- Sol Dept shop card (index) -------------------------------------------- */
 
 .shop-card { width: 100%; overflow: hidden; transition: border-color 0.2s; }

@@ -27,36 +27,45 @@
   </script>
   <!-- End MailerLite Universal -->
   <style>
-    /* MailerLite embed override — selectors are doubled on the form's own
-       #mlb2-43369856 id to out-specificity MailerLite's injected
-       #mlb2-43369856.ml-form-embedContainer ...!important rules. This can't
-       live in style.css since the id is unique to this form. */
-    #mlb2-43369856#mlb2-43369856.ml-form-embedContainer {
+    /* MailerLite embed override — selectors are doubled on each form's own
+       id (#mlb2-43369856 newsletter, #mlb2-43545874 Retention Mastery) to out-specificity MailerLite's injected
+       #mlb2-XXXXX.ml-form-embedContainer ...!important rules. This can't
+       live in style.css since the ids are unique to each form. */
+    #mlb2-43369856#mlb2-43369856.ml-form-embedContainer,
+    #mlb2-43545874#mlb2-43545874.ml-form-embedContainer {
       width: 100% !important;
     }
-    #mlb2-43369856#mlb2-43369856 .ml-form-embedWrapper.embedForm {
+    #mlb2-43369856#mlb2-43369856 .ml-form-embedWrapper.embedForm,
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedWrapper.embedForm {
       width: 100% !important;
       max-width: 100% !important;
       background: transparent !important;
     }
     #mlb2-43369856#mlb2-43369856 .ml-form-embedBody,
-    #mlb2-43369856#mlb2-43369856 .ml-form-successBody {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedBody,
+    #mlb2-43369856#mlb2-43369856 .ml-form-successBody,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successBody {
       background-color: transparent !important;
       border: none !important;
       border-radius: 0 !important;
       padding: 0 !important;
     }
     #mlb2-43369856#mlb2-43369856 .ml-form-embedContent,
-    #mlb2-43369856#mlb2-43369856 .ml-form-successContent {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedContent,
+    #mlb2-43369856#mlb2-43369856 .ml-form-successContent,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent {
       text-align: center !important;
       margin: 0 0 14px 0 !important;
     }
-    /* MailerLite's own headline/subtext are replaced by .newsletter-heading above the embed */
+    /* MailerLite's own headline/subtext are replaced by .newsletter-heading above each embed */
     #mlb2-43369856#mlb2-43369856 .ml-form-embedContent h4,
-    #mlb2-43369856#mlb2-43369856 .ml-form-embedContent p {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedContent h4,
+    #mlb2-43369856#mlb2-43369856 .ml-form-embedContent p,
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedContent p {
       display: none !important;
     }
-    #mlb2-43369856#mlb2-43369856 .ml-form-successContent h4 {
+    #mlb2-43369856#mlb2-43369856 .ml-form-successContent h4,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent h4 {
       color: var(--success) !important;
       font-family: var(--font) !important;
       font-size: 0.88rem !important;
@@ -66,7 +75,8 @@
       text-align: center !important;
       margin: 0 0 4px 0 !important;
     }
-    #mlb2-43369856#mlb2-43369856 .ml-form-successContent p {
+    #mlb2-43369856#mlb2-43369856 .ml-form-successContent p,
+    #mlb2-43545874#mlb2-43545874 .ml-form-successContent p {
       color: var(--text-dim) !important;
       font-family: var(--font) !important;
       font-size: 0.75rem !important;
@@ -75,24 +85,29 @@
       text-align: center !important;
       margin: 0 !important;
     }
-    #mlb2-43369856#mlb2-43369856 form.ml-block-form {
+    #mlb2-43369856#mlb2-43369856 form.ml-block-form,
+    #mlb2-43545874#mlb2-43545874 form.ml-block-form {
       display: flex !important;
       gap: 8px !important;
       align-items: flex-start !important;
       margin: 0 !important;
       width: 100% !important;
     }
-    #mlb2-43369856#mlb2-43369856 .ml-form-formContent {
+    #mlb2-43369856#mlb2-43369856 .ml-form-formContent,
+    #mlb2-43545874#mlb2-43545874 .ml-form-formContent {
       flex: 1 !important;
       margin: 0 !important;
       width: auto !important;
     }
-    #mlb2-43369856#mlb2-43369856 .ml-form-fieldRow {
+    #mlb2-43369856#mlb2-43369856 .ml-form-fieldRow,
+    #mlb2-43545874#mlb2-43545874 .ml-form-fieldRow {
       margin: 0 !important;
       width: 100% !important;
     }
     #mlb2-43369856#mlb2-43369856 .ml-form-fieldRow input,
-    #mlb2-43369856#mlb2-43369856 input.form-control {
+    #mlb2-43545874#mlb2-43545874 .ml-form-fieldRow input,
+    #mlb2-43369856#mlb2-43369856 input.form-control,
+    #mlb2-43545874#mlb2-43545874 input.form-control {
       background-color: var(--bg) !important;
       border-color: var(--border-soft) !important;
       border-radius: var(--radius-sm) !important;
@@ -104,16 +119,21 @@
       line-height: normal !important;
       padding: 10px 14px !important;
     }
-    #mlb2-43369856#mlb2-43369856 input.form-control::placeholder { color: var(--text-faint) !important; }
-    #mlb2-43369856#mlb2-43369856 input.form-control:focus { border-color: var(--accent) !important; outline: none !important; }
-    #mlb2-43369856#mlb2-43369856 .ml-form-embedSubmit {
+    #mlb2-43369856#mlb2-43369856 input.form-control::placeholder,
+    #mlb2-43545874#mlb2-43545874 input.form-control::placeholder { color: var(--text-faint) !important; }
+    #mlb2-43369856#mlb2-43369856 input.form-control:focus,
+    #mlb2-43545874#mlb2-43545874 input.form-control:focus { border-color: var(--accent) !important; outline: none !important; }
+    #mlb2-43369856#mlb2-43369856 .ml-form-embedSubmit,
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit {
       float: none !important;
       margin: 0 !important;
       width: auto !important;
       flex-shrink: 0 !important;
     }
     #mlb2-43369856#mlb2-43369856 .ml-form-embedSubmit button.primary,
-    #mlb2-43369856#mlb2-43369856 button.primary {
+    #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit button.primary,
+    #mlb2-43369856#mlb2-43369856 button.primary,
+    #mlb2-43545874#mlb2-43545874 button.primary {
       background-color: var(--accent) !important;
       border: none !important;
       border-radius: var(--radius-sm) !important;
@@ -128,11 +148,15 @@
       white-space: nowrap !important;
       transition: background 0.2s !important;
     }
-    #mlb2-43369856#mlb2-43369856 button.primary:hover { background-color: var(--accent-hover) !important; }
+    #mlb2-43369856#mlb2-43369856 button.primary:hover,
+    #mlb2-43545874#mlb2-43545874 button.primary:hover { background-color: var(--accent-hover) !important; }
     @media (max-width: 400px) {
-      #mlb2-43369856#mlb2-43369856 form.ml-block-form { flex-direction: column !important; }
+      #mlb2-43369856#mlb2-43369856 form.ml-block-form,
+      #mlb2-43545874#mlb2-43545874 form.ml-block-form { flex-direction: column !important; }
       #mlb2-43369856#mlb2-43369856 .ml-form-embedSubmit,
-      #mlb2-43369856#mlb2-43369856 .ml-form-embedSubmit button.primary { width: 100% !important; }
+      #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit,
+      #mlb2-43369856#mlb2-43369856 .ml-form-embedSubmit button.primary,
+      #mlb2-43545874#mlb2-43545874 .ml-form-embedSubmit button.primary { width: 100% !important; }
     }
   </style>
 </head>
@@ -242,6 +266,15 @@
     </a>
   </div>
 
+  <!-- Retention Mastery launch waitlist -->
+  <div class="card newsletter-card launch-card">
+    <div class="newsletter-heading">
+      <div class="launch-label">Retention Mastery &middot; Launching October 28</div>
+      <div class="newsletter-title">Reclaim Your Masculine Power</div>
+    </div>
+    <div class="ml-embedded" data-form="O05F9n"></div>
+  </div>
+
   <div class="footer">solbrah.com</div>
 
 </div>
@@ -261,6 +294,19 @@
   } catch {
     // silently skip
   }
+})();
+
+(function() {
+  var container = document.querySelector('.ml-embedded[data-form="O05F9n"]');
+  if (!container) return;
+  var observer = new MutationObserver(function() {
+    var btn = container.querySelector('.ml-form-embedSubmit button.primary');
+    if (btn) {
+      btn.textContent = 'Join';
+      observer.disconnect();
+    }
+  });
+  observer.observe(container, { childList: true, subtree: true });
 })();
 </script>
 <script>
